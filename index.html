@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCTV Web Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1>CCTV Web Viewer</h1>
+      <div id="controls">
+        <input type="email" id="emailInput" placeholder="Enter pairing email" value="">
+        <button id="connectBtn">Connect</button>
+        <button id="disconnectBtn" disabled>Disconnect</button>
+      </div>
+      <div id="status">Enter email &amp; connect to pair</div>
+    </div>
+    <div id="video-container">
+      <video id="remoteVideo" autoplay playsinline muted></video>
+      <div id="no-stream">Waiting for broadcast...</div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDewq8U_BYuu01lwgYYTYdvh6bxG8sB3Fc",
+      authDomain: "cctv-4aa4c.firebaseapp.com",
+      databaseURL: "https://cctv-4aa4c-default-rtdb.firebaseio.com",
+      projectId: "cctv-4aa4c",
+      storageBucket: "cctv-4aa4c.firebasestorage.app",
+      messagingSenderId: "864560354333",
+      appId: "1:864560354333:web:5664d82a983f025ba062f4"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
